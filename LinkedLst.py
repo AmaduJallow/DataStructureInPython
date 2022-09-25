@@ -42,6 +42,14 @@ class LinkedList:
     def size(self):
         return self._size
 
+    def find_item(self, key):
+        current = self._first
+        while current is not None:
+            if current.data == key:
+                return True
+            current = current.next
+        return False
+
 
 user = LinkedList()
 user.push(12)
@@ -50,8 +58,8 @@ user.push(24)
 user.push(30)
 user.push(44)
 user.push(363)
-user.push(360)
-user.delete_head()
-user.delete_head()
+user.push(50)
+
 user.display()
 print(user.size())
+print(user.find_item(50))
